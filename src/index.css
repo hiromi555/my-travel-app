@@ -96,7 +96,7 @@ textarea {
   transition: border-color 0.2s;
   font-family: inherit;
   resize: vertical;
-  min-height: 80px; 
+  min-height: 80px;
 }
 
 textarea:focus {
@@ -250,6 +250,10 @@ textarea:focus {
 .plan-memo {
   font-size: 0.85rem;
   color: #888;
+  /* 改行がそのまま表示されます */
+  white-space: pre-wrap;
+  /* 長い単語がはみ出さない保険 */
+  word-break: break-word;
 }
 
 .plan-cost {
