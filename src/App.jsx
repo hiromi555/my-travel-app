@@ -284,7 +284,7 @@ function App() {
                 <div style={{ background: "white", padding: "10px", borderRadius: "8px", display:"inline-block" }}>
                   <QRCodeCanvas
                     value={generateShareUrl()}
-                    size={256}          /* サイズを大きく！ */
+                    size={350}          /* サイズを大きく！ */
                     level={"L"}         /* 密度を下げてスッキリさせる */
                     includeMargin={true} /* 周りに白フチをつける */
                     />
