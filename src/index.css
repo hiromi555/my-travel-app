@@ -85,6 +85,23 @@ input {
 input:focus {
   border-color: #2196F3;
 }
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px; 
+}
+
+textarea:focus {
+  border-color: #2196F3;
+}
 
 .url-input {
   width: 100%;

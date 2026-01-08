@@ -162,7 +162,7 @@ function App() {
         {isInputOpen ? "🔼 入力フォームを閉じる" : "➕ 新しい予定を追加する"}
       </button>
 
-      {isInputOpen && (
+     {isInputOpen && (
         <div className="input-area" style={editId ? { border: "2px solid #2196F3", background: "#e3f2fd" } : {}}>
           {editId && <div style={{color: "#2196F3", fontWeight: "bold", marginBottom: "10px"}}>✏️ 編集中...</div>}
 
@@ -175,9 +175,21 @@ function App() {
             <input type="time" name="time" value={form.time} onChange={handleInputChange} />
             <input type="text" name="title" placeholder="行き先・やること" className="flex-grow" value={form.title} onChange={handleInputChange} />
           </div>
-          <div className="input-row">
-            <input type="number" name="cost" placeholder="金額" value={form.cost || ""} onChange={handleInputChange} style={{ width: "80px" }} />
-            <input type="text" name="memo" placeholder="メモ" className="flex-grow" value={form.memo} onChange={handleInputChange} />
+
+          {/* ★変更：ここは金額だけにしました */}
+          <div style={{ marginBottom: "12px" }}>
+            <input type="number" name="cost" placeholder="金額" value={form.cost || ""} onChange={handleInputChange} style={{ width: "120px" }} />
+          </div>
+
+          {/* ★追加：メモを独立させて textarea に変更！ */}
+          <div style={{ marginBottom: "12px" }}>
+            <textarea
+              name="memo"
+              placeholder="メモ（改行もできます）"
+              value={form.memo}
+              onChange={handleInputChange}
+              rows={3} // 最初から3行分の高さを確保
+            />
           </div>
 
           <div style={{ marginBottom: "12px" }}>
@@ -284,9 +296,9 @@ function App() {
                 <div style={{ background: "white", padding: "10px", borderRadius: "8px", display:"inline-block" }}>
                   <QRCodeCanvas
                     value={generateShareUrl()}
-                    size={400}          /* サイズを大きく！ */
-                    level={"L"}         /* 密度を下げてスッキリさせる */
-                    includeMargin={true} /* 周りに白フチをつける */
+                    size={400}
+                    level={"L"}
+                    includeMargin={true}
                     />
                 </div>
               </div>
