@@ -282,7 +282,12 @@ function App() {
             {showQR && (
               <div className="qr-box" style={{marginBottom:"20px"}}>
                 <div style={{ background: "white", padding: "10px", borderRadius: "8px", display:"inline-block" }}>
-                  <QRCodeCanvas value={generateShareUrl()} size={180} />
+                  <QRCodeCanvas
+                    value={generateShareUrl()}
+                    size={256}          /* サイズを大きく！ */
+                    level={"L"}         /* 密度を下げてスッキリさせる */
+                    includeMargin={true} /* 周りに白フチをつける */
+                    />
                 </div>
               </div>
             )}
