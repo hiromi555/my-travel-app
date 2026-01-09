@@ -250,7 +250,7 @@ textarea:focus {
 .plan-memo {
   font-size: 0.85rem;
   color: #888;
-  /* 改行がそのまま表示されます */
+  /* 改行がそのまま表示 */
   white-space: pre-wrap;
   /* 長い単語がはみ出さない保険 */
   word-break: break-word;
@@ -328,7 +328,7 @@ textarea:focus {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 管理メニュー内のボタン（余分なマージンを削除してスッキリさせました） */
+/* 管理メニュー内のボタン */
 .qr-btn {
   background: #673AB7;
   color: white;

@@ -3,7 +3,7 @@ import { QRCodeCanvas } from 'qrcode.react';
 import LZString from 'lz-string';
 
 function App() {
-  // 1. データ読み込み（ここはそのまま）
+  // 1. データ読み込み
   const [plans, setPlans] = useState(() => {
      const searchParams = new URLSearchParams(window.location.search);
      const sharedData = searchParams.get("data");
@@ -24,8 +24,6 @@ function App() {
   const [editId, setEditId] = useState(null);
   const [activeTab, setActiveTab] = useState("ALL");
   const [isInputOpen, setIsInputOpen] = useState(false);
-
-  // ★追加：管理メニューが開いているかどうか
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -282,7 +280,7 @@ function App() {
           {isMenuOpen ? "▼ 管理メニューを閉じる" : "⚙️ データの保存・転送・リセット"}
         </button>
 
-        {/* ★ここから下が隠れるエリア */}
+        {/* ここから下が隠れるエリア */}
         {isMenuOpen && (
           <div className="admin-menu">
             <h4 style={{textAlign:"center", marginTop:0, color:"#666"}}>Data Management</h4>
